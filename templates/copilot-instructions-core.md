@@ -1,4 +1,4 @@
-# AI Agent Instructions Template
+﻿# AI Agent Instructions Template
 
 > **Stackpole Consulting AI Agent Best Practices**  
 > Copy this template to your project root and customize for your specific needs.
@@ -35,12 +35,12 @@
 ```
 [Customize this structure for your project type]
 project-root/
-├── src/                    # Source code
-├── tests/                  # Test files
-├── docs/                   # Documentation
-├── config/                 # Configuration files
-├── scripts/                # Build/deployment scripts
-└── .ai-agent/              # AI agent instructions (this file)
+â”œâ”€â”€ src/                    # Source code
+â”œâ”€â”€ tests/                  # Test files
+â”œâ”€â”€ docs/                   # Documentation
+â”œâ”€â”€ config/                 # Configuration files
+â”œâ”€â”€ scripts/                # Build/deployment scripts
+â””â”€â”€ .ai-agent/              # AI agent instructions (this file)
 ```
 
 ### Naming Conventions
@@ -75,22 +75,24 @@ project-root/
 ## Agent Collaboration Guidelines
 
 ### Effective Prompting
-**Do:**
+**Recommended approaches:**
 - Provide specific context about what you're trying to achieve
 - Mention relevant existing code/patterns when requesting changes
 - Ask for explanations of suggested approaches
 - Request multiple options when architectural decisions are involved
 
-**Don't:**
+**Approaches that often lead to issues:**
 - Ask for "the best way" without context
 - Request changes to files you haven't shown the agent
 - Assume the agent remembers details from much earlier in the conversation
 
-### Code Quality Expectations
-1. **Always include error handling** - Don't accept code that ignores potential failures
-2. **Require input validation** - Validate all external inputs (APIs, user input, config)
-3. **Demand testability** - Code should be structured to enable unit testing
-4. **Insist on documentation** - Complex logic should include explanatory comments
+### Code Quality Guidelines
+Based on lessons learned from production issues:
+
+1. **Error Handling** - Production failures often stem from unhandled edge cases
+2. **Input Validation** - External inputs (APIs, user input, config) are common sources of security vulnerabilities
+3. **Testability** - Untestable code becomes technical debt quickly
+4. **Documentation** - Complex logic without comments becomes unmaintainable
 
 ### Architectural Decision Making
 **When to extend existing code:**
